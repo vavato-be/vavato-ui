@@ -1,10 +1,15 @@
 import React from 'react'
-
-import { ExampleComponent } from 'vavato-ui'
-import 'vavato-ui/dist/index.css'
+import { ThemeProvider } from 'styled-components';
+import { VavatoTheme, StyleGuide, ToasterManager } from 'vavato-ui'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <ThemeProvider theme={VavatoTheme}>
+      <ToasterManager>
+        <StyleGuide/>
+      </ToasterManager>
+    </ThemeProvider>
+  )
 }
 
 export default App
