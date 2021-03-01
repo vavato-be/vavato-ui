@@ -11,10 +11,9 @@ const Input = styled.input.attrs(props => ({
   background: #FFFFFF;
   border: 2px solid #C4C4C4;
   border-radius: 5px;
-  width: 24px;
-  height: 24px;
+  width: ${(props) => (props.small ? '20px' : '24px')};
+  height: ${(props) => (props.small ? '20px' : '24px')};
   margin-right: 8px;
-  width: 25px;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
@@ -32,22 +31,22 @@ const Input = styled.input.attrs(props => ({
     background-color: ${props => props.theme.secondary};
     border: 2px solid ${props => props.theme.primary};
   }
-`
+`;
 
 const Label = styled.label`
-  line-height: 24px;
+  line-height: ${(props) => (props.small ? '20px' : '24px')};
 
   & .checkmark-react, .exported-component & .checkmark-react {
     background: ${props => props.theme.secondary};
     cursor: pointer;
     position: relative;
-    margin-left: -28px;
+    margin-left: ${(props) => (props.small ? '-23px' : '-28px')};
     color: white;
-    font-size: 18px;
+    font-size: ${(props) => (props.small ? '12px' : '18px')};
     font-weight: bold;
     margin-right: 12px;
   }
-`
+`;
 
 function Checkbox(props) {
   const [checked, setChecked] = useState(props.value || false)
@@ -60,7 +59,7 @@ function Checkbox(props) {
   }
 
   return (
-    <Label>
+    <Label small={props.small}>
       <Input
         {...safeProps(props)}
         checked={checked}
