@@ -17,6 +17,7 @@ import ToasterManager from './ui/ToasterManager'
 import ToasterContext from './ui/ToasterContext'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
+import SelectableCardWithImage from './ui/SelectableCardWithImage';
 import { safeProps, applyColors } from './ui/utils'
 
 export {
@@ -37,6 +38,7 @@ export {
   ToasterContext,
   ToasterViewport,
   Tooltip,
+  SelectableCardWithImage,
   VavatoTheme,
   applyColors,
   formatDate,
