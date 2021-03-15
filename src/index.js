@@ -17,6 +17,7 @@ import ToasterManager from './ui/ToasterManager'
 import ToasterContext from './ui/ToasterContext'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
+import Loader from './ui/Loader'
 import { safeProps, applyColors } from './ui/utils'
 
 export {
@@ -33,6 +34,7 @@ export {
   ExportedComponent,
   FoldablePanel,
   StyleGuide,
+  Loader,
   ToasterManager,
   ToasterContext,
   ToasterViewport,
