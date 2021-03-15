@@ -17,6 +17,8 @@ import ToasterManager from './ui/ToasterManager'
 import ToasterContext from './ui/ToasterContext'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
+import Loader from './ui/Loader'
+import FormField from './ui/FormField'
 import { safeProps, applyColors } from './ui/utils'
 
 export {
@@ -31,8 +33,10 @@ export {
   EllipsisMenu,
   EnvContext,
   ExportedComponent,
+  FormField,
   FoldablePanel,
   StyleGuide,
+  Loader,
   ToasterManager,
   ToasterContext,
   ToasterViewport,
