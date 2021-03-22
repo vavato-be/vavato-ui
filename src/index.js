@@ -19,6 +19,7 @@ import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
 import Loader from './ui/Loader'
 import FormField from './ui/FormField'
+import RadioButton from './ui/RadioButton'
 import { safeProps, applyColors } from './ui/utils'
 
 export {
@@ -37,6 +38,7 @@ export {
   FoldablePanel,
   StyleGuide,
   Loader,
+  RadioButton,
   ToasterManager,
   ToasterContext,
   ToasterViewport,
