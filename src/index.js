@@ -13,6 +13,7 @@ import ExportedComponent from './ui/ExportedComponent'
 import FoldablePanel from './ui/FoldablePanel'
 import { formatDate, formatDateOnly, formatCurrency } from './ui/Formatters'
 import VavatoTheme from './ui/VavatoTheme'
+import Table from './ui/Table'
 import ToasterManager from './ui/ToasterManager'
 import ToasterContext from './ui/ToasterContext'
 import ToasterViewport from './ui/ToasterViewport'
@@ -40,6 +41,7 @@ export {
   StyleGuide,
   Switch,
   Loader,
+  Table,
   RadioButton,
   ToasterManager,
   ToasterContext,
