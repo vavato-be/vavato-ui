@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { lighten, darken } from 'polished'
 
 const Button = styled.button.attrs(props => ({ type: 'button' }))`
-  background: ${props => props.backgroundColor || props.theme.secondary};
-  border: 2px solid ${props => props.backgroundColor || props.theme.secondary};
+  background: ${props => props.primary ? props.theme.primary : props.theme.secondary};
+  border: 2px solid ${props => props.primary ? props.theme.primary : props.theme.secondary};
   color: ${props => props.theme.lightText};
   padding: 5px 13px;
   line-height: 32px;
@@ -18,18 +18,18 @@ const Button = styled.button.attrs(props => ({ type: 'button' }))`
 
   &.outline {
     background: none;
-    color: ${props => props.backgroundColor || props.theme.secondary};
+    color: ${props => props.primary ? props.theme.primary : props.theme.secondary};
   }
 
   &:hover {
-    background: ${props => darken(0.2, props.backgroundColor || props.theme.secondary)};
-    border: 2px solid ${props => darken(0.2, props.backgroundColor || props.theme.secondary)};
+    background: ${props => darken(0.2, props.primary ? props.theme.primary : props.theme.secondary)};
+    border: 2px solid ${props => darken(0.2, props.primary ? props.theme.primary : props.theme.secondary)};
     transition: 0.5s ease-out;
   }
 
   &[disabled], &[disabled]:hover {
-    background: ${props => lighten(0.2, props.backgroundColor || props.theme.secondary)};
-    border: 2px solid ${props => lighten(0.2, props.backgroundColor || props.theme.secondary)};
+    background: ${props => lighten(0.2, props.primary ? props.theme.primary : props.theme.secondary)};
+    border: 2px solid ${props => lighten(0.2, props.primary ? props.theme.primary : props.theme.secondary)};
     cursor: not-allowed;
   }
 `
