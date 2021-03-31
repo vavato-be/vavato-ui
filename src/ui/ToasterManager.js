@@ -5,13 +5,11 @@ import ToasterContext from  './ToasterContext';
 let nextKey = 0;
 function ToasterManager({ children }) {
   const [toasters, setToasters] = useState([]);
-  console.log("rendering with toasters", [...toasters]);
 
   function dismiss(key, toasters) {
     const entry = toasters.find(entry => entry.key === key)
     if(toasters.indexOf(entry) === -1) { return };
 
-    console.log("Dismissing key", key, [...toasters]);
     const newToasters = toasters.filter(entry => entry.key !== key);
     setToasters(newToasters);
   }
