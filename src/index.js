@@ -1,4 +1,5 @@
 import StyleGuide from './ui/StyleGuide/StyleGuide'
+import SearchField from './ui/SearchField'
 import ActionPopover from './ui/ActionPopover'
 import Badge from './ui/Badge'
 import Breadcrumbs from './ui/Breadcrumbs'
@@ -39,6 +40,7 @@ export {
   ExportedComponent,
   FormField,
   FoldablePanel,
+  SearchField,
   StyleGuide,
   Switch,
   Label,
