@@ -12,6 +12,7 @@ import EllipsisMenu from './ui/EllipsisMenu'
 import EnvContext from './ui/EnvContext'
 import ExportedComponent from './ui/ExportedComponent'
 import FoldablePanel from './ui/FoldablePanel'
+import { GlobalStyle } from './ui/GlobalStyle'
 import { formatDate, formatDateOnly, formatCurrency } from './ui/Formatters'
 import VavatoTheme from './ui/VavatoTheme'
 import Table from './ui/Table'
@@ -40,6 +41,7 @@ export {
   ExportedComponent,
   FormField,
   FoldablePanel,
+  GlobalStyle,
   SearchField,
   StyleGuide,
   Switch,

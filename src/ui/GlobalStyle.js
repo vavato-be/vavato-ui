@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     box-sizing: content-box !important;
   }
-  .exported_component *, .exported-comopnent *::before, .exported-component *::after {
+  .exported-component *, .exported-component *::before, .exported-component *::after {
     box-sizing: content-box !important;
   }
 
