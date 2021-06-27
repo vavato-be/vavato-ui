@@ -67,10 +67,10 @@ export const GlobalStyle = createGlobalStyle`
 
 
   .exported-component .primary {
-    color: ${props => props.theme.primary};
+    color: ${(props) => props.theme.primary};
   }
 
   .exported-component .secondary {
-    color: ${props => props.theme.secondary};
+    color: ${(props) => props.theme.secondary};
   }
 `

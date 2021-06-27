@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components';
-import Card from "../Card";
-import Loader from "../Loader";
+import styled from 'styled-components'
+import Card from '../Card'
+import Loader from '../Loader'
 
 const LoaderWrapper = styled.div`
   background-color: #f6f6f6;
@@ -9,9 +9,9 @@ const LoaderWrapper = styled.div`
 `
 
 function LoaderStyleguide() {
-  return(
-    <Card style={{marginBottom: '50px'}}>
-      <div className="title">&lt;Loader&gt;</div>
+  return (
+    <Card style={{ marginBottom: '50px' }}>
+      <div className='title'>&lt;Loader&gt;</div>
       <p>Normal Loader</p>
       <LoaderWrapper>
         <Loader active={true} color='info' />
@@ -28,4 +28,4 @@ function LoaderStyleguide() {
   )
 }
 
-export default LoaderStyleguide;
+export default LoaderStyleguide

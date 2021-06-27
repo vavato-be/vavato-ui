@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import ToasterViewport from './ToasterViewport';
-import ToasterContext from  './ToasterContext';
+import React, { useState } from 'react'
+import ToasterViewport from './ToasterViewport'
+import ToasterContext from './ToasterContext'
 
-let nextKey = 0;
+let nextKey = 0
 function ToasterManager({ children }) {
-  const [toasters, setToasters] = useState([]);
+  const [toasters, setToasters] = useState([])
 
   function dismiss(key, toasters) {
-    const entry = toasters.find(entry => entry.key === key)
-    if(toasters.indexOf(entry) === -1) { return };
+    const entry = toasters.find((entry) => entry.key === key)
+    if (toasters.indexOf(entry) === -1) {
+      return
+    }
 
-    const newToasters = toasters.filter(entry => entry.key !== key);
-    setToasters(newToasters);
+    const newToasters = toasters.filter((entry) => entry.key !== key)
+    setToasters(newToasters)
   }
 
   function buildToaster(message, type) {
@@ -20,28 +22,30 @@ function ToasterManager({ children }) {
       message,
       type
     }
-    nextKey++;
-    setToasters([entry, ...toasters]);
+    nextKey++
+    setToasters([entry, ...toasters])
   }
 
   function success(message) {
-    return buildToaster(message, 'success');
+    return buildToaster(message, 'success')
   }
 
   function info(message) {
-    return buildToaster(message, 'info');
+    return buildToaster(message, 'info')
   }
 
   function error(message) {
-    return buildToaster(message, 'error');
+    return buildToaster(message, 'error')
   }
 
   return (
-    <ToasterContext.Provider value={{ toasters, success, info, error, dismiss }}>
+    <ToasterContext.Provider
+      value={{ toasters, success, info, error, dismiss }}
+    >
       <ToasterViewport />
-      { children }
+      {children}
     </ToasterContext.Provider>
   )
 }
 
-export default ToasterManager;
+export default ToasterManager

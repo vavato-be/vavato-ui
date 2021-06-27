@@ -1,16 +1,14 @@
-import React from 'react';
+import React from 'react'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-import Card from '../Card';
-import Tooltip from '../Tooltip';
+import Card from '../Card'
+import Tooltip from '../Tooltip'
 
 function ButtonStyleGuide() {
   return (
     <Card>
-      <div className="title">&lt;Tooltip&gt;</div>
-      <p>
-        An icon that reveals information in a popup when hovered.
-      </p>
+      <div className='title'>&lt;Tooltip&gt;</div>
+      <p>An icon that reveals information in a popup when hovered.</p>
       <Card>
         <ul>
           <li>
@@ -24,8 +22,7 @@ function ButtonStyleGuide() {
         </ul>
       </Card>
     </Card>
-  );
+  )
 }
 
-export default ButtonStyleGuide;
-
+export default ButtonStyleGuide

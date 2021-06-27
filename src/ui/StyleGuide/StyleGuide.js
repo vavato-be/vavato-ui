@@ -1,19 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import ButtonStyleGuide from './ButtonStyleGuide';
-import CardStyleGuide from './CardStyleGuide';
-import TableStyleGuide from './TableStyleGuide';
-import LabelStyleGuide from './LabelStyleGuide';
-import BadgeStyleGuide from './BadgeStyleGuide';
-import FormStyleGuide from './FormStyleGuide';
-import ActionPopoverStyleGuide from './ActionPopoverStyleGuide';
-import EllipsisMenuStyleGuide from './EllipsisMenuStyleGuide';
-import BreadcrumbsStyleGuide from './BreadcrumbsStyleGuide';
-import TooltipStyleGuide from './TooltipStyleGuide';
-import ToasterStyleGuide from './ToasterStyleGuide';
+import ButtonStyleGuide from './ButtonStyleGuide'
+import CardStyleGuide from './CardStyleGuide'
+import TableStyleGuide from './TableStyleGuide'
+import LabelStyleGuide from './LabelStyleGuide'
+import BadgeStyleGuide from './BadgeStyleGuide'
+import FormStyleGuide from './FormStyleGuide'
+import ActionPopoverStyleGuide from './ActionPopoverStyleGuide'
+import EllipsisMenuStyleGuide from './EllipsisMenuStyleGuide'
+import BreadcrumbsStyleGuide from './BreadcrumbsStyleGuide'
+import TooltipStyleGuide from './TooltipStyleGuide'
+import ToasterStyleGuide from './ToasterStyleGuide'
 import Breadcrumbs from '../Breadcrumbs'
-import LoaderStyleguide from "./LoaderStyleGuide";
+import LoaderStyleguide from './LoaderStyleGuide'
 
 const Container = styled.div`
   display: flex;
@@ -48,7 +48,10 @@ const NavLinkListItem = styled.li`
   display: block;
   margin: 24px 0px;
 
-  & a, & a:visited, & a:active, & a:hover {
+  & a,
+  & a:visited,
+  & a:active,
+  & a:hover {
     text-transform: uppercase;
     color: ${(props) => props.theme.lightText} !important;
     text-decoration: none;
@@ -83,8 +86,8 @@ function StyleGuide() {
   function renderNavLinks() {
     return Object.entries(guides).map(([id, component]) => {
       return (
-        <NavLinkListItem key={ id }>
-          <a href={`#${ id }`}>{ id }</a>
+        <NavLinkListItem key={id}>
+          <a href={`#${id}`}>{id}</a>
         </NavLinkListItem>
       )
     })
@@ -93,8 +96,8 @@ function StyleGuide() {
   function renderGuides() {
     return Object.entries(guides).map(([id, component]) => {
       return (
-        <div id={ id } key={ id }>
-          { component }
+        <div id={id} key={id}>
+          {component}
         </div>
       )
     })
@@ -104,21 +107,19 @@ function StyleGuide() {
     <React.Fragment>
       <Container>
         <NavBar>
-          <NavLinkList>
-            { renderNavLinks() }
-          </NavLinkList>
+          <NavLinkList>{renderNavLinks()}</NavLinkList>
         </NavBar>
         <Content>
           <Breadcrumbs>
-            <a href="/">Home</a>
-            <span className="active">Style Guide</span>
+            <a href='/'>Home</a>
+            <span className='active'>Style Guide</span>
           </Breadcrumbs>
           <h1>Style Guide</h1>
-          { renderGuides() }
+          {renderGuides()}
         </Content>
       </Container>
     </React.Fragment>
   )
 }
 
-export default StyleGuide;
+export default StyleGuide

@@ -1,4 +1,4 @@
-import VavatoTheme from "./VavatoTheme";
+import VavatoTheme from './VavatoTheme'
 
 export const fontSizes = {
   bodyLarge: '1.125rem',
@@ -10,14 +10,14 @@ export const fontSizes = {
   h3: '1.6rem',
   h4: '1.375rem',
   h5: '1.125rem',
-  h6: '1rem',
-};
+  h6: '1rem'
+}
 
 export const fontWeights = {
   bold: '600',
   semiBold: '500',
-  regular: '400',
-};
+  regular: '400'
+}
 
 export const colors = {
   primary: VavatoTheme.primary,
