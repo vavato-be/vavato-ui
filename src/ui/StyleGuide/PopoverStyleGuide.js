@@ -16,7 +16,7 @@ function ActionPopoverStyleGuide() {
         <Button onClick={() => setOpen(!open)}>TOGGLE BAR</Button>
         <ActionPopover open={open} close={() => setOpen(false)}>
           <div>
-            <span class='secondary'></span> transactions selected.&nbsp; Select
+            <span className='secondary' /> transactions selected.&nbsp; Select
             payment request to continue.
           </div>
           <ButtonWithIcon icon={faHeart}>MATCH</ButtonWithIcon>

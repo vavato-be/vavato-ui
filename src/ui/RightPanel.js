@@ -40,7 +40,7 @@ function RightPanel({ open, children, onClose = () => {} }) {
 
   return (
     <React.Fragment>
-      <Overlay onClick={onClose}></Overlay>
+      <Overlay onClick={onClose} />
       <Panel>{children}</Panel>
     </React.Fragment>
   )

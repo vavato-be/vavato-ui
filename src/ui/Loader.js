@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { applyColors } from './utils'
 
-//TODO: Kill options, too many, allows for inconsistencies
+// TODO: Kill options, too many, allows for inconsistencies
 const Loader = styled(({ className, big, message }) => (
   <div className={className}>
     <FontAwesomeIcon

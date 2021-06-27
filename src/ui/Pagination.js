@@ -40,16 +40,16 @@ function Pagination({ pageCount, onPageChange }) {
   return (
     <StyledWrapper>
       <ReactPaginate
-        previousLabel={'<< Previous'}
-        nextLabel={'Next >>'}
-        breakLabel={'...'}
+        previousLabel='<< Previous'
+        nextLabel='Next >>'
+        breakLabel='...'
         pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={8}
         onPageChange={onPageChange}
-        containerClassName={'pagination'}
-        subContainerClassName={'pages pagination'}
-        activeClassName={'active'}
+        containerClassName='pagination'
+        subContainerClassName='pages pagination'
+        activeClassName='active'
         initialPage={0}
       />
     </StyledWrapper>

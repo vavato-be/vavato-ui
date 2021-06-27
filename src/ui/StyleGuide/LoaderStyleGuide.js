@@ -14,11 +14,11 @@ function LoaderStyleguide() {
       <div className='title'>&lt;Loader&gt;</div>
       <p>Normal Loader</p>
       <LoaderWrapper>
-        <Loader active={true} color='info' />
+        <Loader active color='info' />
       </LoaderWrapper>
       <p>Big Loader</p>
       <LoaderWrapper>
-        <Loader active={true} big color='info' />
+        <Loader active big color='info' />
       </LoaderWrapper>
       <p>Loader with text</p>
       <LoaderWrapper>
