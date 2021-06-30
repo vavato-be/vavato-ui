@@ -21,7 +21,7 @@ const Table = styled.table`
   }
 
   & tbody tr:nth-child(odd) {
-    background: ${(props) => props.theme.background} !important;
+    background: ${(props) => props.theme.background};
   }
 
   & tr {
