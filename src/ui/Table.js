@@ -8,7 +8,8 @@ const Table = styled.table`
   border-collapse: collapse;
   border: none;
 
-  & thead td, & thead th {
+  & thead td,
+  & thead th {
     text-align: left;
     font-weight: bold;
     font-size: 14px;
@@ -28,15 +29,17 @@ const Table = styled.table`
     border: none;
   }
 
-  & td, & th {
+  & td,
+  & th {
     border: none !important;
   }
 
   & tbody tr.active {
-    background: ${props => rgba(props.theme.secondary, 0.1)}
+    background: ${(props) => rgba(props.theme.secondary, 0.1)};
   }
 
-  & tbody td, & tfoot td {
+  & tbody td,
+  & tfoot td {
     font-size: 12px;
     text-align: left;
     padding: 0 8px;
@@ -46,7 +49,8 @@ const Table = styled.table`
     padding-right: 0;
   }
 
-  & td.number, & th.number {
+  & td.number,
+  & th.number {
     text-align: right;
   }
 
@@ -62,4 +66,4 @@ const Table = styled.table`
   }
 `
 
-export default Table;
+export default Table

@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const PropertyListTable = styled.table`
   width: 100%;
@@ -18,11 +18,11 @@ const PropertyListTable = styled.table`
   & td.key {
     font-weight: bold;
     text-transform: uppercase;
-    width: ${props => props.labelWidth}
+    width: ${(props) => props.labelWidth};
   }
 
   & td.key:after {
-    content: ':'
+    content: ':';
   }
 
   & td.value {
@@ -36,32 +36,29 @@ const PropertyListTable = styled.table`
   }
 `
 function PropertyList({ data, labelWidth = '150px' }) {
-  const properties = Object.entries(data);
+  const properties = Object.entries(data)
 
   function renderProperties() {
-    return properties.map(prop => renderProperty(prop))
+    return properties.map((prop) => renderProperty(prop))
   }
 
   function renderProperty([key, value]) {
-    if(!value) {
+    if (!value) {
       return []
     }
     return (
       <tr key={key}>
-        <td className="key">{key}</td>
-        <td className="value">{value}</td>
+        <td className='key'>{key}</td>
+        <td className='value'>{value}</td>
       </tr>
     )
   }
 
   return (
     <PropertyListTable labelWidth={labelWidth}>
-      <tbody>
-        { renderProperties() }
-      </tbody>
+      <tbody>{renderProperties()}</tbody>
     </PropertyListTable>
   )
-
 }
 
-export default PropertyList;
+export default PropertyList

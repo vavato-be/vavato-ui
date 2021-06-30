@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { safeProps } from './utils';
+import { safeProps } from './utils'
 
 const Link = styled.a`
   cursor: pointer;
@@ -21,15 +21,13 @@ const Link = styled.a`
 `
 
 function LinkWithIcon(props) {
-  const { icon } = props;
+  const { icon } = props
   return (
     <Link {...safeProps(props)}>
-      <FontAwesomeIcon icon={ icon } />
-      <span>{ props.children }</span>
+      <FontAwesomeIcon icon={icon} />
+      <span>{props.children}</span>
     </Link>
   )
-
-
 }
 
-export default LinkWithIcon;
+export default LinkWithIcon

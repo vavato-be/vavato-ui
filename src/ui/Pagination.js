@@ -1,9 +1,8 @@
-import React from 'react';
-import ReactPaginate from 'react-paginate';
-import styled from "styled-components";
+import React from 'react'
+import ReactPaginate from 'react-paginate'
+import styled from 'styled-components'
 
 const StyledWrapper = styled.div`
-
   & {
     margin-top: 2em;
   }
@@ -41,21 +40,20 @@ function Pagination({ pageCount, onPageChange }) {
   return (
     <StyledWrapper>
       <ReactPaginate
-        previousLabel={'<< Previous'}
-        nextLabel={'Next >>'}
-        breakLabel={'...'}
+        previousLabel='<< Previous'
+        nextLabel='Next >>'
+        breakLabel='...'
         pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={8}
         onPageChange={onPageChange}
-        containerClassName={'pagination'}
-        subContainerClassName={'pages pagination'}
-        activeClassName={'active'}
+        containerClassName='pagination'
+        subContainerClassName='pages pagination'
+        activeClassName='active'
         initialPage={0}
       />
-
     </StyledWrapper>
   )
 }
 
-export default Pagination;
+export default Pagination

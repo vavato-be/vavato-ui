@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Menu = styled.nav`
-  display: ${props => props.open ? 'flex' : 'none'};
+  display: ${(props) => (props.open ? 'flex' : 'none')};
   background: white;
   position: fixed;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   padding: 24px 16px;
   min-width: 300px;
   z-index: 3;
@@ -26,7 +26,10 @@ const Menu = styled.nav`
     cursor: pointer;
   }
 
-  & > ul li a, & > ul li a:active, & > ul li a:visited, & > ul li a:hover {
+  & > ul li a,
+  & > ul li a:active,
+  & > ul li a:visited,
+  & > ul li a:hover {
     color: #000;
     text-decoration: none;
     font-size: 14px;
@@ -34,13 +37,11 @@ const Menu = styled.nav`
   }
 
   & li:hover {
-    background: ${props => props.theme.background};
+    background: ${(props) => props.theme.background};
   }
-
 `
 
 function Dropdown({ children, open, className }) {
-
   function renderChildren() {
     if (!children) {
       return []
@@ -48,15 +49,15 @@ function Dropdown({ children, open, className }) {
     if (!children.length) {
       return <li>{children}</li>
     }
-    return children.map(child => (<li key={children.indexOf(child)}>{child}</li>))
+    return children.map((child) => (
+      <li key={children.indexOf(child)}>{child}</li>
+    ))
   }
   return (
-    <Menu className="className" open={open}>
-      <ul className="unstyled">
-        { renderChildren() }
-      </ul>
+    <Menu className='className' open={open}>
+      <ul className='unstyled'>{renderChildren()}</ul>
     </Menu>
   )
 }
 
-export default Dropdown;
+export default Dropdown

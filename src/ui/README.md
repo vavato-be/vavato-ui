@@ -2,8 +2,8 @@
 
 ## Philosophy
 
-These components provide consistency when used, providing all of the necessary 
-formatting and CSS, except for layout matters like flexbox, css grid, floats, 
+These components provide consistency when used, providing all of the necessary
+formatting and CSS, except for layout matters like flexbox, css grid, floats,
 etc.
 
 The idea is not to provide extensive options, but rather enforce consistency in
@@ -29,15 +29,12 @@ anything other than strictly semantic classes, like `number` for table cells.
 
 ## Layout
 
-We apply flexbox for layout in order to maintain a fluid-width based power 
-user interface that can be used both from tablets and computers. 
+We apply flexbox for layout in order to maintain a fluid-width based power
+user interface that can be used both from tablets and computers.
 
 There are no utility classes for a grid system. Flexbox allows you to divide
-the screen in as many divisions as you need. 
+the screen in as many divisions as you need.
 
 Our backoffice applications do not need to be responsive, as they are only
 supposed to work on tablets and computers, so there is nothing in here
 for mobile.
-
-
-

@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Badge = styled.span`
   display: inline-block;
   font-family: sans-serif;
-  background: ${props => props.theme.error};
+  background: ${(props) => props.theme.error};
   padding: 4px;
   max-width: 40px;
-  color: ${props => props.theme.lightText};
+  color: ${(props) => props.theme.lightText};
   text-align: center;
   margin: 4px 8px -5px 0px;
   border-radius: 20px;
@@ -20,27 +20,26 @@ const Badge = styled.span`
   box-sizing: content-box;
 
   &.primary {
-    color: ${props => props.theme.lightText};
-    background: ${props => props.theme.primary};
+    color: ${(props) => props.theme.lightText};
+    background: ${(props) => props.theme.primary};
   }
 
   &.secondary {
-    color: ${props => props.theme.lightText};
-    background: ${props => props.theme.secondary};
+    color: ${(props) => props.theme.lightText};
+    background: ${(props) => props.theme.secondary};
   }
 
   &.success {
-    background: ${props => props.theme.success};
+    background: ${(props) => props.theme.success};
   }
 
   &.error {
-    background: ${props => props.theme.error};
+    background: ${(props) => props.theme.error};
   }
 
   &.info {
-    background: ${props => props.theme.info};
+    background: ${(props) => props.theme.info};
   }
-`;
+`
 
-export default Badge;
-
+export default Badge
