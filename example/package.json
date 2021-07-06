@@ -13,6 +13,7 @@
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
+    "styled-components": "link:../node_modules/styled-components",
     "vavato-ui": "link:.."
   },
   "devDependencies": {
