@@ -142,6 +142,8 @@ function Autocomplete({ onSelect, url, value, resultRenderer, placeholder }) {
 
     let newTop = bottom + 5
     let newLeft = left
+    const maxHeight =
+      document.documentElement.clientHeight - newTop - menu.clientHeight - 5
 
     if (newTop + height > document.documentElement.clientHeight) {
       newTop = top - height
@@ -153,6 +155,7 @@ function Autocomplete({ onSelect, url, value, resultRenderer, placeholder }) {
 
     menu.style.left = `${newLeft}px`
     menu.style.top = `${newTop}px`
+    menu.style.maxHeight = `${maxHeight}px`
   }
 
   function closeMenu() {
