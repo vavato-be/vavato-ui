@@ -1,6 +1,7 @@
 import StyleGuide from './ui/StyleGuide/StyleGuide'
 import SearchField from './ui/SearchField'
 import ActionPopover from './ui/ActionPopover'
+import Autocomplete from './ui/Autocomplete'
 import Badge from './ui/Badge'
 import Breadcrumbs from './ui/Breadcrumbs'
 import Button from './ui/Button'
@@ -29,6 +30,7 @@ import { safeProps, applyColors } from './ui/utils'
 
 export {
   ActionPopover,
+  Autocomplete,
   Badge,
   Breadcrumbs,
   Button,

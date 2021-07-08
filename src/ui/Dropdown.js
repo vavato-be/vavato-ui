@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Menu = styled.nav`
-  display: ${(props) => (props.open ? 'flex' : 'none')};
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  ${(props) => (props.open ? 'display: flex;' : '')}
   background: white;
   position: fixed;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   padding: 24px 16px;
   min-width: 300px;
+  overflow-y: auto;
   z-index: 3;
 
   & > ul {

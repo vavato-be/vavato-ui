@@ -51,4 +51,33 @@ function applyColors(cssProperty, options) {
   }
 }
 
-export { safeProps, applyColors }
+function extractPagination(headers) {
+  const currentPage = headers.get('X-Page')
+  const itemsPerPage = headers.get('X-Per-Page')
+  const totalItems = headers.get('X-Total')
+  return {
+    current: currentPage,
+    total: Math.ceil(totalItems / itemsPerPage),
+    total_records: totalItems
+  }
+}
+
+function extractLinks(string) {
+  function parseLink(rawLinkPair) {
+    const [rawLink, rawRel] = rawLinkPair.split(';')
+    const link = rawLink.slice(1, -1)
+    const rel = rawRel.match(/rel="(.*?)"/)[1]
+    return { link: link, tag: rel }
+  }
+
+  const links = {}
+  if (string) {
+    string.split(',').forEach((rawLink) => {
+      const parsedLinkObject = parseLink(rawLink.trim())
+      links[parsedLinkObject.tag] = parsedLinkObject.link
+    })
+  }
+  return links
+}
+
+export { safeProps, applyColors, extractLinks, extractPagination }
