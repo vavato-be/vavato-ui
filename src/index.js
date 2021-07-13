@@ -9,6 +9,7 @@ import ButtonWithIcon from './ui/ButtonWithIcon'
 import Card from './ui/Card'
 import Checkbox from './ui/Checkbox'
 import Dropdown from './ui/Dropdown'
+import DropdownButton from './ui/DropdownButton'
 import EllipsisMenu from './ui/EllipsisMenu'
 import EnvContext from './ui/EnvContext'
 import ExportedComponent from './ui/ExportedComponent'
@@ -38,6 +39,7 @@ export {
   Card,
   Checkbox,
   Dropdown,
+  DropdownButton,
   EllipsisMenu,
   EnvContext,
   ExportedComponent,
