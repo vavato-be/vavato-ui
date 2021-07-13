@@ -23,6 +23,7 @@ import ToasterContext from './ui/ToasterContext'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
 import Label from './ui/Label'
+import LinkWithIcon from './ui/LinkWithIcon'
 import Loader from './ui/Loader'
 import FormField from './ui/FormField'
 import RadioButton from './ui/RadioButton'
@@ -50,6 +51,7 @@ export {
   StyleGuide,
   Switch,
   Label,
+  LinkWithIcon,
   Loader,
   Table,
   RadioButton,
