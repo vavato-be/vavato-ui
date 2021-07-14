@@ -122,8 +122,9 @@ function useFetch(
       const json = await result.json()
       assertResponse(result, json, error)
       callback(json)
+      return json
     }
-    doFetch()
+    return doFetch()
   }, dependencies)
   /* eslint-enable */
 }
