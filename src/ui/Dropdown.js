@@ -56,7 +56,7 @@ function Dropdown({ children, open, className }) {
     ))
   }
   return (
-    <Menu className='className' open={open}>
+    <Menu className={className} open={open}>
       <ul className='unstyled'>{renderChildren()}</ul>
     </Menu>
   )
