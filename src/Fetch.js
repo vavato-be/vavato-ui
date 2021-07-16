@@ -1,5 +1,4 @@
-import { useEffect, useContext } from 'react'
-import { useEnv } from './ui/EnvContext'
+import { useContext } from 'react'
 import ToasterContext from './ui/ToasterContext'
 import { extractLinks, extractPagination } from './ui/utils'
 
@@ -101,109 +100,43 @@ function assertResponse(result, json = null, error = () => {}) {
   throw message
 }
 
-function useFetch(
-  relativeUrl,
-  callback = () => {},
-  dependencies = [relativeUrl]
-) {
-  const domain = useEnv('DOMAIN')
+async function makeGet(url, callback = () => {}) {
   const { error } = useContext(ToasterContext)
 
-  /* eslint-disable */
-  return useEffect(() => {
-    const validDeps = dependencies.filter((d) => d)
-    if (validDeps.length !== dependencies.length) {
-      return
-    }
-
-    const doFetch = async () => {
-      const resource = `${domain}${relativeUrl}`
-      const result = await fetchData(resource)
-      const json = await result.json()
-      assertResponse(result, json, error)
-      callback(json)
-      return json
-    }
-    return doFetch()
-  }, dependencies)
-  /* eslint-enable */
+  const result = await fetchData(url)
+  const json = await result.json()
+  assertResponse(result, json, error)
+  callback(json)
 }
 
-function usePagingFetch(url, callback = () => {}, dependencies = [url]) {
+async function makePaginatedGet(url, callback = () => {}) {
   const { error } = useContext(ToasterContext)
 
-  /* eslint-disable */
-  return useEffect(() => {
-    const validDeps = dependencies.filter((d) => d)
-    if (validDeps.length !== dependencies.length) {
-      return
-    }
-
-    const doFetch = async () => {
-      const result = await fetchData(url)
-      const json = await result.json()
-      const headers = await result.headers
-      const links = extractLinks(headers.get('Link'))
-      const pagination = extractPagination(headers)
-      assertResponse(result, json, error)
-      callback({ data: json, links: links, pagination: pagination })
-    }
-    doFetch()
-  }, dependencies)
-  /* eslint-enable */
+  const result = await fetchData(url)
+  const json = await result.json()
+  const headers = await result.headers
+  const links = extractLinks(headers.get('Link'))
+  const pagination = extractPagination(headers)
+  assertResponse(result, json, error)
+  callback({ data: json, links: links, pagination: pagination }) // eslint-disable-line
 }
 
-async function usePost(
-  relativeUrl,
-  params,
-  callback = () => {},
-  dependencies = []
-) {
-  const domain = useEnv('DOMAIN')
+async function makePost(url, params, callback = () => {}) {
   const { error } = useContext(ToasterContext)
 
-  /* eslint-disable */
-  return useEffect(() => {
-    const validDeps = dependencies.filter((d) => d)
-    if (validDeps.length !== dependencies.length) {
-      return
-    }
-    const doPost = async () => {
-      const resource = `${domain}${relativeUrl}`
-      const result = await postResource(resource, params)
-      const json = await result.json()
-      assertResponse(result, json, error)
-      callback(json)
-    }
-    doPost()
-  }, dependencies)
-  /* eslint-enable */
+  const result = await postResource(url, params)
+  const json = await result.json()
+  assertResponse(result, json, error)
+  callback(json)
 }
-async function usePut(
-  relativeUrl,
-  params,
-  callback = () => {},
-  dependencies = []
-) {
-  const domain = useEnv('DOMAIN')
+
+async function makePut(url, params, callback = () => {}) {
   const { error } = useContext(ToasterContext)
 
-  /* eslint-disable */
-  return useEffect(() => {
-    const validDeps = dependencies.filter((d) => d)
-    if (validDeps.length !== dependencies.length) {
-      return
-    }
-    const doPut = async () => {
-      const resource = `${domain}${relativeUrl}`
-      const result = await postResource(resource, params, 'PUT')
-      const json = await result.json()
-      assertResponse(result, json, error)
-      callback(json)
-    }
-    doPut()
-  }, dependencies)
-  /* eslint-enable */
+  const result = await postResource(url, params, 'PUT')
+  const json = await result.json()
+  assertResponse(result, json, error)
+  callback(json)
 }
 
 export {
@@ -212,9 +145,9 @@ export {
   postData,
   putData,
   deleteData,
-  useFetch,
-  usePost,
-  usePagingFetch,
-  usePut,
+  makeGet,
+  makePaginatedGet,
+  makePost,
+  makePut,
   requestHeaders
 }

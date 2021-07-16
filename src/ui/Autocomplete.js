@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import { useEnv } from './EnvContext'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 
 import Dropdown from './Dropdown'
-import { useFetch } from '../Fetch'
+import { makeGet } from '../Fetch'
 
 const Selected = styled('div')`
   flex: 1;
@@ -166,9 +167,14 @@ function Autocomplete({ onSelect, url, value, resultRenderer, placeholder }) {
   }
 
   const encodedQuery = encodeURIComponent(search)
-  useFetch(`${url}?q=${encodedQuery}&query=${encodedQuery}`, applyResults, [
-    search
-  ])
+  const domain = useEnv('DOMAIN')
+  useEffect(
+    makeGet(
+      `${domain}${url}?q=${encodedQuery}&query=${encodedQuery}`,
+      applyResults
+    ),
+    [search]
+  )
 
   // TODO: Keydown handler for esc to close query
   return (
