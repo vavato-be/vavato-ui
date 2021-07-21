@@ -10,6 +10,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 const StyledButton = styled(Button)`
   width: ${(props) => (props.children.length ? '130px' : 'auto')};
+  box-sizing: border-box !important;
   line-height: 1.1em;
   height: 46px;
   border-bottom-width: 5px;
