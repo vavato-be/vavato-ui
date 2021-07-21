@@ -10,6 +10,7 @@ const Link = styled.a`
   flex-direction: row;
   align-items: center;
   line-height: 48px;
+  width: 100%;
 
   & > svg {
     margin-right: 16px;
