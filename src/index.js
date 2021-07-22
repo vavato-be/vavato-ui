@@ -20,6 +20,7 @@ import VavatoTheme from './ui/VavatoTheme'
 import Table from './ui/Table'
 import Label from './ui/Label'
 import LinkWithIcon from './ui/LinkWithIcon'
+import List from './ui/List'
 import Loader from './ui/Loader'
 import Pagination from './ui/Pagination'
 import PropertyList from './ui/PropertyList'
@@ -70,6 +71,7 @@ export {
   GlobalStyle,
   Label,
   LinkWithIcon,
+  List,
   Loader,
   Pagination,
   PropertyList,
