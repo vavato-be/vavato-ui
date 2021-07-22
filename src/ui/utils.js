@@ -51,6 +51,16 @@ function applyColors(cssProperty, options) {
   }
 }
 
+function queryParams(query) {
+  const url = new URL('http://foo.bar')
+  Object.keys(query).forEach((key) => {
+    if (query[key]) {
+      url.searchParams.append(key, query[key])
+    }
+  })
+  return url.search
+}
+
 function extractPagination(headers) {
   const currentPage = headers.get('X-Page')
   const itemsPerPage = headers.get('X-Per-Page')
@@ -80,4 +90,27 @@ function extractLinks(string) {
   return links
 }
 
-export { safeProps, applyColors, extractLinks, extractPagination }
+async function downloadBlob(response, mimetype, successCallback) {
+  const data = await response.arrayBuffer()
+  const blob = new Blob([data], { type: mimetype })
+  const url = window.URL.createObjectURL(blob)
+  const a = document.createElement('a')
+
+  a.style.display = 'none'
+  a.href = url
+  // the filename you want
+  a.download = `download.zip`
+  document.body.appendChild(a)
+  a.click()
+  window.URL.revokeObjectURL(url)
+  successCallback()
+}
+
+export {
+  safeProps,
+  applyColors,
+  queryParams,
+  extractLinks,
+  extractPagination,
+  downloadBlob
+}

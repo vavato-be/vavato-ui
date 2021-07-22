@@ -20,7 +20,7 @@ const Panel = styled.div`
   height: calc(100vh - 22px);
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: ${(props) => props.zIndex};
   overflow-y: auto;
 
   & *,
@@ -33,7 +33,7 @@ const Panel = styled.div`
 /**
  * Renders the RightPanel
  */
-function RightPanel({ open, children, onClose = () => {} }) {
+function RightPanel({ open, children, zIndex = 2, onClose = () => {} }) {
   if (!open) {
     return null
   }

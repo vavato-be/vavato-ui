@@ -18,6 +18,7 @@ const Link = styled.a`
 
   & > span {
     flex: 1;
+    text-align: left;
   }
 `
 
