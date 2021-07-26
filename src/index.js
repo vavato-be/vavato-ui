@@ -35,6 +35,7 @@ import ToasterManager from './ui/ToasterManager'
 import ToasterContext from './ui/ToasterContext'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
+import { fontSizes, fontWeights, colors } from './ui/constants'
 
 import {
   applyColors,
@@ -100,6 +101,9 @@ export {
   ToasterViewport,
   Tooltip,
   VavatoTheme,
+  fontSizes,
+  fontWeights,
+  colors,
   useEnv,
   applyColors,
   safeProps,
