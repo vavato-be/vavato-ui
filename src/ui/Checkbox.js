@@ -14,7 +14,6 @@ const Input = styled.input.attrs((props) => ({
   width: 24px;
   height: 24px;
   margin-right: 8px;
-  width: 25px;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
@@ -22,6 +21,10 @@ const Input = styled.input.attrs((props) => ({
   outline: none;
   transition-duration: 0.3s;
   cursor: pointer;
+
+  && {
+    box-sizing: border-box !important;
+  }
 
   &:checked {
     border: 1px solid ${(props) => props.theme.text};
@@ -36,17 +39,20 @@ const Input = styled.input.attrs((props) => ({
 
 const Label = styled.label`
   line-height: 24px;
+  display: flex;
 
   & .checkmark-react,
   .exported-component & .checkmark-react {
     background: ${(props) => props.theme.secondary};
     cursor: pointer;
     position: relative;
-    margin-left: -28px;
     color: white;
     font-size: 18px;
     font-weight: bold;
-    margin-right: 12px;
+    margin: 1px 12px 1px -28px;
+    height: 22px;
+    line-height: 22px;
+    width: 16px;
   }
 `
 
