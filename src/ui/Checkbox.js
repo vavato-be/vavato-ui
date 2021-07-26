@@ -36,6 +36,8 @@ const Input = styled.input.attrs((props) => ({
 
 const Label = styled.label`
   line-height: 24px;
+  display: flex;
+  align-items: center;
 
   & .checkmark-react,
   .exported-component & .checkmark-react {
