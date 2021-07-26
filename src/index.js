@@ -21,6 +21,7 @@ import VavatoTheme from './ui/VavatoTheme'
 import Input from './ui/Input'
 import Label from './ui/Label'
 import LinkWithIcon from './ui/LinkWithIcon'
+import List from './ui/List'
 import Loader from './ui/Loader'
 import Pagination from './ui/Pagination'
 import PropertyList from './ui/PropertyList'
@@ -82,6 +83,7 @@ export {
   Input,
   Label,
   LinkWithIcon,
+  List,
   Loader,
   Pagination,
   PropertyList,
