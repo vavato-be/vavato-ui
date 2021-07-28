@@ -14,6 +14,7 @@ import EllipsisMenu from './ui/EllipsisMenu'
 import EnvContext, { useEnv } from './ui/EnvContext'
 import ExportedComponent from './ui/ExportedComponent'
 import FileList from './ui/FileList'
+import FileUploader from './ui/FileUploader'
 import FoldablePanel from './ui/FoldablePanel'
 import FormField from './ui/FormField'
 import { GlobalStyle } from './ui/GlobalStyle'
@@ -79,6 +80,7 @@ export {
   ExportedComponent,
   FoldablePanel,
   FileList,
+  FileUploader,
   FormField,
   GlobalStyle,
   Input,
