@@ -41,7 +41,7 @@ function RightPanel({ open, children, zIndex = 2, onClose = () => {} }) {
   return (
     <React.Fragment>
       <Overlay onClick={onClose} />
-      <Panel>{children}</Panel>
+      <Panel zIndex={zIndex}>{children}</Panel>
     </React.Fragment>
   )
 }
