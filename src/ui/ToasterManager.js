@@ -17,7 +17,6 @@ function ToasterManager({ children }) {
       return
     }
 
-    console.log('Dismissing key', key, [...toasters])
     const newToasters = toasters.filter((entry) => entry.key !== key)
     setToasters(newToasters)
   }

@@ -30,7 +30,6 @@ function ToasterViewport() {
   const reduxToasters = useSelector(selectAllToasters)
 
   const allToasters = useMemo(() => {
-    console.log('Calculating allToasters')
     return [...reduxToasters, ...toasters]
   }, [toasters, reduxToasters])
 

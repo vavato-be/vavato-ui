@@ -63,8 +63,7 @@ import {
   fetchJSON,
   requestHeaders
 } from './Fetch'
-import {
-  toasterReducer,
+import toasterReducer, {
   success as toasterSuccess,
   info as toasterInfo,
   error as toasterError,
