@@ -59,6 +59,7 @@ import {
   usePut,
   postData,
   putData,
+  deleteData,
   fetchData,
   fetchJSON,
   requestHeaders
@@ -129,6 +130,7 @@ export {
   usePut,
   postData,
   putData,
+  deleteData,
   fetchData,
   fetchJSON,
   requestHeaders,
