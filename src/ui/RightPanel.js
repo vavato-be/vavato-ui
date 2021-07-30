@@ -17,11 +17,12 @@ const Panel = styled.div`
   box-shadow: -11px 1px 36px -18px rgba(0, 0, 0, 0.64);
   position: fixed;
   width: 33vw;
-  height: calc(100vh - 22px);
-  top: 0;
+  height: calc(100vh - 40px);
+  top: 40px;
   right: 0;
   z-index: ${(props) => props.zIndex};
   overflow-y: auto;
+  padding-bottom: 76px;
 
   & *,
   & *:after,
