@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { dismiss as dismissFromRedux } from './../toasterSlice'
 import ToasterViewport from './ToasterViewport'
 import ToasterContext from './ToasterContext'
 
 let nextKey = 0
 function ToasterManager({ children }) {
   const [toasters, setToasters] = useState([])
+  const dispatch = useDispatch()
 
   function dismiss(key, toasters) {
+    dispatch(dismissFromRedux(key))
     const entry = toasters.find((entry) => entry.key === key)
     if (toasters.indexOf(entry) === -1) {
       return

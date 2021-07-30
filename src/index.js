@@ -32,8 +32,8 @@ import RightPanelFooter from './ui/RightPanelFooter'
 import Switch from './ui/Switch'
 import Table from './ui/Table'
 import Toaster from './ui/Toaster'
-import ToasterManager from './ui/ToasterManager'
 import ToasterContext from './ui/ToasterContext'
+import ToasterManager from './ui/ToasterManager'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
 import { fontSizes, fontWeights, colors } from './ui/constants'
@@ -63,6 +63,12 @@ import {
   fetchJSON,
   requestHeaders
 } from './Fetch'
+import toasterReducer, {
+  success as toasterSuccess,
+  info as toasterInfo,
+  error as toasterError,
+  dismiss as toasterDismiss
+} from './toasterSlice'
 
 export {
   ActionPopover,
@@ -125,5 +131,10 @@ export {
   putData,
   fetchData,
   fetchJSON,
-  requestHeaders
+  requestHeaders,
+  toasterReducer,
+  toasterSuccess,
+  toasterInfo,
+  toasterError,
+  toasterDismiss
 }
