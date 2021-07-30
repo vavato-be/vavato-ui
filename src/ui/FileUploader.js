@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { DirectUploadProvider } from 'react-activestorage-provider'
 
 import ButtonWithIcon from './ButtonWithIcon'
-import useEnv from './EnvContext'
+import { useEnv } from './EnvContext'
 import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons'
 
 import { requestHeaders } from '../Fetch'
