@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { rgba, darken } from 'polished'
+import { rgba, darken, saturate } from 'polished'
 
 const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   background: ${(props) =>
     props.primary ? props.theme.primary : props.theme.secondary};
-  border: 2px solid
-    ${(props) => (props.primary ? props.theme.primary : props.theme.secondary)};
+  border: 2px solid transparent;
   color: ${(props) => props.theme.lightText};
   padding: 5px 13px;
   line-height: 32px;
@@ -22,17 +21,21 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
     background: none;
     color: ${(props) =>
       props.primary ? props.theme.primary : props.theme.secondary};
+    border: 2px solid
+      ${(props) =>
+        props.primary ? props.theme.primary : props.theme.secondary};
   }
 
   &:hover {
+    color: ${(props) => props.theme.lightText};
     background: ${(props) =>
-      props.primary ? props.theme.primaryHover : props.theme.secondaryHover};
-    border: 2px solid
-      ${(props) =>
-        darken(
-          0.2,
-          props.primary ? props.theme.primaryHover : props.theme.secondaryHover
-        )};
+      darken(
+        0.1,
+        saturate(
+          0.3,
+          props.primary ? props.theme.primary : props.theme.secondary
+        )
+      )};
     transition: 0.5s ease-out;
   }
 
@@ -40,7 +43,6 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   &[disabled]:hover {
     background: ${(props) =>
       rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
-    border: 2px solid transparent;
     cursor: not-allowed;
   }
 `
