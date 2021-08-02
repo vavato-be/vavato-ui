@@ -16,6 +16,7 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   margin: 8px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  border-radius: 5px;
 
   &.outline {
     background: none;
