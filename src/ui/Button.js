@@ -22,9 +22,8 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
     background: none;
     color: ${(props) =>
       props.primary ? props.theme.primary : props.theme.secondary};
-    border: 2px solid
-      ${(props) =>
-        props.primary ? props.theme.primary : props.theme.secondary};
+    border-color: ${(props) =>
+      props.primary ? props.theme.primary : props.theme.secondary};
   }
 
   &:hover {
@@ -45,6 +44,15 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
     background: ${(props) =>
       rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
     cursor: not-allowed;
+  }
+
+  &.outline[disabled],
+  &.outline[disabled]:hover {
+    background: none;
+    color: ${(props) =>
+      rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
+    border-color: ${(props) =>
+      rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
   }
 `
 
