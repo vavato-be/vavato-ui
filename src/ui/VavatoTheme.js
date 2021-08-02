@@ -1,6 +1,8 @@
 const VavatoTheme = {
-  primary: '#a29060',
-  secondary: '#6192a1',
+  primary: '#6192A1',
+  secondary: '#A29060',
+  primaryHover: '#2D86A1',
+  secondaryHover: '#2D86A1',
   background: '#f6f6f6',
   text: '#595a5C',
   lightText: '#f6f6f6',

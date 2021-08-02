@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { lighten, darken } from 'polished'
+import { rgba, darken } from 'polished'
 
 const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   background: ${(props) =>
@@ -26,12 +26,12 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
 
   &:hover {
     background: ${(props) =>
-      darken(0.2, props.primary ? props.theme.primary : props.theme.secondary)};
+      props.primary ? props.theme.primaryHover : props.theme.secondaryHover};
     border: 2px solid
       ${(props) =>
         darken(
           0.2,
-          props.primary ? props.theme.primary : props.theme.secondary
+          props.primary ? props.theme.primaryHover : props.theme.secondaryHover
         )};
     transition: 0.5s ease-out;
   }
@@ -39,16 +39,8 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   &[disabled],
   &[disabled]:hover {
     background: ${(props) =>
-      lighten(
-        0.2,
-        props.primary ? props.theme.primary : props.theme.secondary
-      )};
-    border: 2px solid
-      ${(props) =>
-        lighten(
-          0.2,
-          props.primary ? props.theme.primary : props.theme.secondary
-        )};
+      rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
+    border: 2px solid transparent;
     cursor: not-allowed;
   }
 `
