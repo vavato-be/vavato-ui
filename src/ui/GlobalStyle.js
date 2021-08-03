@@ -60,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #e41f5d;
     background: #ececec;
     border: 1px solid #dcdcdc;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 2px 4px;
     font-family: monospace;
   }
