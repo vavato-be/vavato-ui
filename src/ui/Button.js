@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { lighten, darken } from 'polished'
+import { rgba, darken, saturate } from 'polished'
 
 const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   background: ${(props) =>
     props.primary ? props.theme.primary : props.theme.secondary};
-  border: 2px solid
-    ${(props) => (props.primary ? props.theme.primary : props.theme.secondary)};
+  border: 2px solid transparent;
   color: ${(props) => props.theme.lightText};
   padding: 5px 13px;
   line-height: 32px;
@@ -17,39 +16,43 @@ const Button = styled.button.attrs((props) => ({ type: 'button' }))`
   margin: 8px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  border-radius: 3px;
 
   &.outline {
     background: none;
     color: ${(props) =>
       props.primary ? props.theme.primary : props.theme.secondary};
+    border-color: ${(props) =>
+      props.primary ? props.theme.primary : props.theme.secondary};
   }
 
   &:hover {
+    color: ${(props) => props.theme.lightText};
     background: ${(props) =>
-      darken(0.2, props.primary ? props.theme.primary : props.theme.secondary)};
-    border: 2px solid
-      ${(props) =>
-        darken(
-          0.2,
+      darken(
+        0.1,
+        saturate(
+          0.3,
           props.primary ? props.theme.primary : props.theme.secondary
-        )};
+        )
+      )};
     transition: 0.5s ease-out;
   }
 
   &[disabled],
   &[disabled]:hover {
     background: ${(props) =>
-      lighten(
-        0.2,
-        props.primary ? props.theme.primary : props.theme.secondary
-      )};
-    border: 2px solid
-      ${(props) =>
-        lighten(
-          0.2,
-          props.primary ? props.theme.primary : props.theme.secondary
-        )};
+      rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
     cursor: not-allowed;
+  }
+
+  &.outline[disabled],
+  &.outline[disabled]:hover {
+    background: none;
+    color: ${(props) =>
+      rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
+    border-color: ${(props) =>
+      rgba(props.primary ? props.theme.primary : props.theme.secondary, 0.6)};
   }
 `
 

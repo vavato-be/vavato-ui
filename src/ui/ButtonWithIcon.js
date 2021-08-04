@@ -10,22 +10,6 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 const StyledButton = styled(Button)`
   width: ${(props) => (props.children.length ? '130px' : 'auto')};
-  box-sizing: border-box !important;
-  line-height: 1.1em;
-  height: 46px;
-  border-bottom-width: 5px;
-`
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-spacing: space-between;
-  align-items: center;
-
-  & span {
-    flex: 1;
-    text-align: center;
-  }
 `
 
 function ButtonWithIcon(props) {
@@ -33,7 +17,7 @@ function ButtonWithIcon(props) {
 
   return (
     <StyledButton {...safeProps(props)}>
-      <Content>
+      <div>
         <StyledIcon
           icon={icon}
           haslabel={props.children && props.children.length}
@@ -43,7 +27,7 @@ function ButtonWithIcon(props) {
         ) : (
           []
         )}
-      </Content>
+      </div>
     </StyledButton>
   )
 }

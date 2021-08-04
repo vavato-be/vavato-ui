@@ -28,7 +28,7 @@ const Input = styled.input.attrs(() => {
   border: 2px solid ${(props) => rgba(props.theme.text, 0.4)};
   padding: 8px 16px 8px 36px;
   font-size: 13px;
-  border-radius: 5px;
+  border-radius: 3px;
 
   &::placeholder {
     color: ${(props) => rgba(props.theme.text, 0.4)};

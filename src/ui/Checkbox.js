@@ -10,7 +10,7 @@ const Input = styled.input.attrs((props) => ({
   float: left;
   background: #ffffff;
   border: 2px solid #c4c4c4;
-  border-radius: 5px;
+  border-radius: 3px;
   width: 24px;
   height: 24px;
   margin-right: 8px;

@@ -12,6 +12,7 @@ const Container = styled.div`
   align-items: center;
   padding: 16px 0px;
   margin-top: 16px;
+  border-radius: 3px;
 
   & svg {
     margin: 0 32px;
