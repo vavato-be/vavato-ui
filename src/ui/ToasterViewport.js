@@ -1,5 +1,4 @@
-import React, { useContext, useMemo } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import {
   faTimesCircle,
@@ -9,7 +8,6 @@ import {
 
 import Toaster from './Toaster'
 import ToasterContext from './ToasterContext'
-import { selectAllToasters } from './../toasterSlice'
 
 const ICONS = {
   success: faCheckCircle,
@@ -27,11 +25,6 @@ const ToastersDisplay = styled('div')`
 
 function ToasterViewport() {
   const { toasters, dismiss } = useContext(ToasterContext)
-  const reduxToasters = useSelector(selectAllToasters)
-
-  const allToasters = useMemo(() => {
-    return [...reduxToasters, ...toasters]
-  }, [toasters, reduxToasters])
 
   function renderToaster({ type, key, message }) {
     return (
@@ -48,7 +41,7 @@ function ToasterViewport() {
   }
   return (
     <ToastersDisplay>
-      {allToasters.map((entry) => renderToaster(entry))}
+      {toasters.map((entry) => renderToaster(entry))}
     </ToastersDisplay>
   )
 }
