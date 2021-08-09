@@ -64,12 +64,6 @@ import {
   fetchJSON,
   requestHeaders
 } from './Fetch'
-import toasterReducer, {
-  success as toasterSuccess,
-  info as toasterInfo,
-  error as toasterError,
-  dismiss as toasterDismiss
-} from './toasterSlice'
 
 export {
   ActionPopover,
@@ -133,10 +127,5 @@ export {
   deleteData,
   fetchData,
   fetchJSON,
-  requestHeaders,
-  toasterReducer,
-  toasterSuccess,
-  toasterInfo,
-  toasterError,
-  toasterDismiss
+  requestHeaders
 }
