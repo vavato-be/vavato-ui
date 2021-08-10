@@ -4,7 +4,7 @@ import { rgba } from 'polished'
 const List = styled.ul`
   padding-left: 0px;
 
-  & li {
+  > li {
     display: flex;
     border-top: 0.5px solid ${(props) => rgba(props.theme.secondary, 0.3)};
     font-size: 11px;
