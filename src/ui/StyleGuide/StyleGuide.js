@@ -14,6 +14,7 @@ import TooltipStyleGuide from './TooltipStyleGuide'
 import ToasterStyleGuide from './ToasterStyleGuide'
 import Breadcrumbs from '../Breadcrumbs'
 import LoaderStyleguide from './LoaderStyleGuide'
+import CounterStyleGuide from './CounterStyleGuide'
 
 const Container = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ const NavBar = styled.nav`
   box-shadow: 5px 0px 10px 1px rgba(0, 0, 0, 0.15);
   padding: 32px 64px;
   z-index: 1;
+  overflow: scroll;
 `
 
 const NavLinkList = styled.ul`
@@ -80,7 +82,8 @@ function StyleGuide() {
     tooltip: <TooltipStyleGuide />,
     ellipsis: <EllipsisMenuStyleGuide />,
     loader: <LoaderStyleguide />,
-    toaster: <ToasterStyleGuide />
+    toaster: <ToasterStyleGuide />,
+    counter: <CounterStyleGuide />
   }
 
   function renderNavLinks() {
