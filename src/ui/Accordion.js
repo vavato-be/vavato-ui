@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import vectorDown from '../assets/icons/vector-down.svg'
-import vectorRight from '../assets/icons/vector-right.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 
 const AccordionHeaderStyle = styled.div`
   display: flex;
@@ -16,17 +16,19 @@ const AccordionTitleStyle = styled.p`
   cursor: pointer;
 `
 
-const AccordionIconStyle = styled.img`
-  display: inline-block;
-  margin-right: 16px;
+const AccordionIconStyle = styled(FontAwesomeIcon)`
   cursor: pointer;
+  font-size: 1.3rem;
+  margin-right: 16px;
+  display: inline-block;
+  color: ${(props) => props.theme.primary};
 `
 
 function Accordion({ title, setOpen, isOpen }) {
   return (
     <AccordionHeaderStyle>
       <AccordionIconStyle
-        src={isOpen ? vectorDown : vectorRight}
+        icon={isOpen ? faCaretDown : faCaretRight}
         onClick={setOpen}
       />
       <AccordionTitleStyle data-testid='accordion' onClick={setOpen}>

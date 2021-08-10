@@ -14,6 +14,7 @@ import TooltipStyleGuide from './TooltipStyleGuide'
 import ToasterStyleGuide from './ToasterStyleGuide'
 import Breadcrumbs from '../Breadcrumbs'
 import LoaderStyleguide from './LoaderStyleGuide'
+import AccordionStyleGuide from './AccordionStyleGuide'
 
 const Container = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const NavBar = styled.nav`
 `
 
 const NavLinkList = styled.ul`
-  display: flex
+  display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
@@ -80,7 +81,8 @@ function StyleGuide() {
     tooltip: <TooltipStyleGuide />,
     ellipsis: <EllipsisMenuStyleGuide />,
     loader: <LoaderStyleguide />,
-    toaster: <ToasterStyleGuide />
+    toaster: <ToasterStyleGuide />,
+    accordion: <AccordionStyleGuide />
   }
 
   function renderNavLinks() {
