@@ -57,18 +57,12 @@ const Label = styled.label`
   margin-bottom: 10px;
 `
 
-function FormField({ name, label, children }) {
-  return React.createElement(
-    Container,
-    null,
-    React.createElement(
-      Label,
-      {
-        htmlFor: name
-      },
-      label
-    ),
-    React.createElement(InputsContainer, null, children)
+function FormField({ name, label, children, className }) {
+  return (
+    <Container className={className}>
+      <Label htmlFor={name} />
+      <InputsContainer>{children}</InputsContainer>
+    </Container>
   )
 }
 
