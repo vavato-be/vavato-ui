@@ -1,5 +1,6 @@
 import StyleGuide from './ui/StyleGuide/StyleGuide'
 import SearchField from './ui/SearchField'
+import Accordion from './ui/Accordion'
 import ActionPopover from './ui/ActionPopover'
 import Autocomplete from './ui/Autocomplete'
 import Badge from './ui/Badge'
@@ -66,6 +67,7 @@ import {
 } from './Fetch'
 
 export {
+  Accordion,
   ActionPopover,
   Autocomplete,
   Badge,
