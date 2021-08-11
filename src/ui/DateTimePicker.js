@@ -1,10 +1,9 @@
 import React from 'react'
 import moment from 'moment-timezone'
 import styled from 'styled-components'
-import calendarIcon from '../../assets/icons/calendar.svg'
 
 const DateTimePickerStyle = styled.input.attrs({ type: 'datetime-local' })`
-  width: 200px;
+  max-width: 200px;
   color: ${(props) => props.theme.text};
   padding: 0.5rem;
   text-align: right;
@@ -45,7 +44,7 @@ function DateTimePicker({
 
   return (
     <DateTimePickerStyle
-      calendarIcon={calendarIcon}
+      calendarIcon={'https://svgshare.com/i/_5Y.svg'}
       value={toTimeZone(datetime)}
       onChange={(e) => setDatetime(fromTimeZone(e.target.value))}
       disabled={!!disabled}
