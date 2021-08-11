@@ -7,6 +7,7 @@ const VavatoTheme = {
   darkText: '#343a40',
   warningText: '#df3a58',
   cardBackground: '#fff',
+  darkBackground: '#c4c4c4',
   lightBackground: '#f8f9fa',
   tableHeaders: '#a8a8a8',
   success: '#259b11',
