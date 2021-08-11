@@ -35,7 +35,7 @@ const NavBar = styled.nav`
 `
 
 const NavLinkList = styled.ul`
-  display: flex
+  display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;

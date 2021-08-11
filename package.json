@@ -57,6 +57,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "moment-timezone": "^0.5.33",
     "polished": "^4.1.1",
     "react-activestorage-provider": "^0.8.0",
     "react-paginate": "^7.1.3",
