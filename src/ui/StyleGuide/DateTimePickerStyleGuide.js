@@ -13,9 +13,9 @@ function DateTimePickerStyleGuide() {
         <DateTimePicker
           datetime={datetime}
           setDatetime={setDatetime}
-          timezone={'Europe/Brussels'}
-          min={'2021-05-01T08:00:00.000Z'}
-          max={'2021-05-31T08:00:00.000Z'}
+          timezone='Europe/Brussels'
+          min='2021-05-01T08:00:00.000Z'
+          max='2021-05-31T08:00:00.000Z'
         />
       </Card>
     </Card>
