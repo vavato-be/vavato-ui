@@ -23,9 +23,6 @@ const CounterStyle = styled.input`
   font-weight: 500;
   font-size: 0.75rem;
   text-align: center;
-  font-family: 'Merriweather Sans', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
 `
 
 const CounterIconStyle = styled(FontAwesomeIcon)`

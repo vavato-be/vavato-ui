@@ -8,6 +8,7 @@ import Button from './ui/Button'
 import ButtonWithIcon from './ui/ButtonWithIcon'
 import Card from './ui/Card'
 import Checkbox from './ui/Checkbox'
+import Counter from './ui/Counter'
 import Dropdown from './ui/Dropdown'
 import DropdownButton from './ui/DropdownButton'
 import EllipsisMenu from './ui/EllipsisMenu'
@@ -74,6 +75,7 @@ export {
   ButtonWithIcon,
   Card,
   Checkbox,
+  Counter,
   Dropdown,
   DropdownButton,
   EllipsisMenu,
