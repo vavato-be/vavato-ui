@@ -50,7 +50,7 @@ function FormStyleGuide() {
       <Card>
         <div className='title'>&lt;Counter&gt;</div>
         <p>
-          A counter serves to count up and down (it can't be less than zero).
+          A counter serves to count up and down (it's needed to set a minValue).
         </p>
         <Counter minValue={0} setCounter={setCounter} counter={counter} />
       </Card>
