@@ -15,8 +15,8 @@ const RadioButtonInputStyle = styled.input.attrs({ type: 'radio' })`
   -moz-appearance: none;
   appearance: none;
 
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   margin-right: 8px;
   margin-bottom: 3px;
   position: relative;

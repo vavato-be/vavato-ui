@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Card from '../Card'
 import Checkbox from '../Checkbox'
+import RadioButton from '../RadioButton'
 import SearchField from '../SearchField'
 import Switch from '../Switch'
 
@@ -8,6 +9,7 @@ function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
   const [switchState, setSwitchState] = useState(false)
+  const [radioState, setRadioState] = useState('orange')
 
   function handleCheckboxChanged(value) {
     setChecked(value)
@@ -56,6 +58,20 @@ function FormStyleGuide() {
             setSwitchState(!switchState)
           }}
         />
+      </Card>
+      <Card>
+        <div className='title'>&lt;Radio Button&gt;</div>
+        <p>A custom radio button providing many options to be selected</p>
+        {['orange', 'banana', 'apple'].map((option) => (
+          <RadioButton
+            name={`radio.${option}`}
+            value={option}
+            checked={radioState === option}
+            onCheck={() => {
+              setRadioState(option)
+            }}
+          />
+        ))}
       </Card>
     </Card>
   )
