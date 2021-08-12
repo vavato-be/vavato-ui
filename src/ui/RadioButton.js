@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const RadioInputLabelStyle = styled.label`
+const RadioButtonLabelStyle = styled.label`
   color: black;
   display: flex;
   font-weight: 400;
@@ -10,7 +10,7 @@ const RadioInputLabelStyle = styled.label`
   align-items: center;
 `
 
-const RadioInputInputStyle = styled.input.attrs({ type: 'radio' })`
+const RadioButtonInputStyle = styled.input.attrs({ type: 'radio' })`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -18,6 +18,7 @@ const RadioInputInputStyle = styled.input.attrs({ type: 'radio' })`
   width: 16px;
   height: 16px;
   margin-right: 8px;
+  margin-bottom: 3px;
   position: relative;
   border-radius: 100%;
   border: 2px solid ${(props) => props.theme.secondary};
@@ -36,25 +37,30 @@ const RadioInputInputStyle = styled.input.attrs({ type: 'radio' })`
   :focus {
     outline: none;
   }
+
+  :disabled {
+    background-color: #dddddd;
+  }
 `
 
-const RadioInputTextStyle = styled.label`
-  margin-left: 0.5rem;
-  margin-right: 1.5rem;
+const RadioButtonTextStyle = styled.label`
+  margin-left: 8px;
+  margin-right: 24px;
 `
 
-function RadioInput({ name, value, checked, onCheck }) {
+function RadioButton({ name, value, disabled, checked, onCheck }) {
   return (
-    <RadioInputLabelStyle>
-      <RadioInputInputStyle
+    <RadioButtonLabelStyle>
+      <RadioButtonInputStyle
         name={name}
         value={value}
+        disabled={disabled}
         checked={checked}
         onChange={onCheck}
       />
-      <RadioInputTextStyle>{value}</RadioInputTextStyle>
-    </RadioInputLabelStyle>
+      <RadioButtonTextStyle>{value}</RadioButtonTextStyle>
+    </RadioButtonLabelStyle>
   )
 }
 
-export default RadioInput
+export default RadioButton
