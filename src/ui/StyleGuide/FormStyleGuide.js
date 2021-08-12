@@ -64,6 +64,7 @@ function FormStyleGuide() {
         <p>A custom radio button providing many options to be selected</p>
         {['orange', 'banana', 'apple'].map((option) => (
           <RadioButton
+            key={`radio.${option}`}
             name={`radio.${option}`}
             value={option}
             checked={radioState === option}
