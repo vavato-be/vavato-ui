@@ -32,6 +32,14 @@ function LabelStyleGuide() {
             <Label className='info'>info</Label>
             with the "info" className
           </li>
+          <li>
+            <Label className='neutral'>neutral</Label>
+            with the "neutral" className
+          </li>
+          <li>
+            <Label className='fluid'>fluid</Label>
+            with the "fluid" className
+          </li>
         </ul>
       </Card>
     </Card>
