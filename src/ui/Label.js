@@ -47,8 +47,8 @@ const Label = styled.span`
   }
 
   &.fluid {
-    min-width: 0 !important;
-    width: auto !important;
+    min-width: 0;
+    width: auto;
   }
 `
 
