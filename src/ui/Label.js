@@ -49,7 +49,6 @@ const Label = styled.span`
   &.fluid {
     min-width: 0 !important;
     width: auto !important;
-    cursor: pointer;
   }
 `
 
