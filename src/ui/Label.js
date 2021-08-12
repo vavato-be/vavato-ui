@@ -40,6 +40,17 @@ const Label = styled.span`
     background: ${(props) => rgba(props.theme.info, 0.2)};
     color: ${(props) => props.theme.info};
   }
+
+  &.neutral {
+    background: none;
+    color: black;
+  }
+
+  &.fluid {
+    min-width: 0 !important;
+    width: auto !important;
+    cursor: pointer;
+  }
 `
 
 export default Label
