@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import Card from '../Card'
 import Checkbox from '../Checkbox'
 import SearchField from '../SearchField'
+import DateTimePicker from '../DateTimePicker'
 
 function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
+  const [datetime, setDatetime] = useState('2021-05-15T08:00:00.000Z')
 
   function handleCheckboxChanged(value) {
     setChecked(value)
@@ -44,6 +46,19 @@ function FormStyleGuide() {
           onChange={(value) => setSearch(value)}
         />
         <p>Value: {search}</p>
+      </Card>
+      <Card>
+        <div className='title'>&lt;Date Time Picker&gt;</div>
+        <p>
+          A datetime picker serves to select a datetime within a given range.
+        </p>
+        <DateTimePicker
+          datetime={datetime}
+          setDatetime={setDatetime}
+          timezone='Europe/Brussels'
+          min='2021-05-01T08:00:00.000Z'
+          max='2021-05-31T08:00:00.000Z'
+        />
       </Card>
     </Card>
   )

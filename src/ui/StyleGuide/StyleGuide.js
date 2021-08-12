@@ -14,7 +14,6 @@ import TooltipStyleGuide from './TooltipStyleGuide'
 import ToasterStyleGuide from './ToasterStyleGuide'
 import Breadcrumbs from '../Breadcrumbs'
 import LoaderStyleguide from './LoaderStyleGuide'
-import DateTimePickerStyleGuide from './DateTimePickerStyleGuide'
 
 const Container = styled.div`
   display: flex;
@@ -81,8 +80,7 @@ function StyleGuide() {
     tooltip: <TooltipStyleGuide />,
     ellipsis: <EllipsisMenuStyleGuide />,
     loader: <LoaderStyleguide />,
-    toaster: <ToasterStyleGuide />,
-    dateTimePicker: <DateTimePickerStyleGuide />
+    toaster: <ToasterStyleGuide />
   }
 
   function renderNavLinks() {
