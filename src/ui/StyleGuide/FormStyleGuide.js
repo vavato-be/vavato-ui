@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import Card from '../Card'
 import Checkbox from '../Checkbox'
 import SearchField from '../SearchField'
+import Counter from '../Counter'
 
 function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
+  const [counter, setCounter] = useState(0)
 
   function handleCheckboxChanged(value) {
     setChecked(value)
@@ -44,6 +46,13 @@ function FormStyleGuide() {
           onChange={(value) => setSearch(value)}
         />
         <p>Value: {search}</p>
+      </Card>
+      <Card>
+        <div className='title'>&lt;Counter&gt;</div>
+        <p>
+          A counter serves to count up and down (it can't be less than zero).
+        </p>
+        <Counter setCounter={setCounter} counter={counter} />
       </Card>
     </Card>
   )
