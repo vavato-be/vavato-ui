@@ -7,11 +7,11 @@ const CALENDAR_ICON_URL = 'https://svgshare.com/i/_5Y.svg'
 const DateTimePickerStyle = styled.input.attrs({ type: 'datetime-local' })`
   max-width: 200px;
   color: ${(props) => props.theme.text};
-  padding: 0.5rem;
+  padding: 8px;
   text-align: right;
   font-size: 0.75rem;
   border-radius: 5px;
-  border: 2px solid #c4c4c4;
+  border: ${(props) => `2px solid ${props.theme.darkBackground}`};
   background: linear-gradient(to right, #fff 80%, #c4c4c4 20%);
   background-size: 200px;
   background-repeat: no-repeat;
