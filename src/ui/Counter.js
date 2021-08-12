@@ -11,7 +11,7 @@ const CounterLabelStyle = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 1px solid #c4c4c4;
+  border: ${(props) => `1px solid ${props.theme.darkBackground}`};
   border-radius: 6px;
 `
 
@@ -27,17 +27,17 @@ const CounterStyle = styled.input`
 
 const CounterIconStyle = styled(FontAwesomeIcon)`
   padding: 4px;
-  color: #c4c4c4;
+  color: ${(props) => props.theme.darkBackground};
 
   :hover {
     cursor: pointer;
   }
 `
 
-function Counter({ counter, setCounter }) {
+function Counter({ minValue, counter, setCounter }) {
   function changeCounter(counter) {
     const newCounter = parseInt(counter)
-    if (newCounter > 0) {
+    if (newCounter > minValue) {
       setCounter(newCounter)
     }
   }

@@ -52,7 +52,7 @@ function FormStyleGuide() {
         <p>
           A counter serves to count up and down (it can't be less than zero).
         </p>
-        <Counter setCounter={setCounter} counter={counter} />
+        <Counter minValue={0} setCounter={setCounter} counter={counter} />
       </Card>
     </Card>
   )
