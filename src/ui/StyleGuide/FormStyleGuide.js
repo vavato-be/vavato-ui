@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import Card from '../Card'
 import Checkbox from '../Checkbox'
 import SearchField from '../SearchField'
+import Switch from '../Switch'
 
 function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
+  const [switchState, setSwitchState] = useState(false)
 
   function handleCheckboxChanged(value) {
     setChecked(value)
@@ -44,6 +46,16 @@ function FormStyleGuide() {
           onChange={(value) => setSearch(value)}
         />
         <p>Value: {search}</p>
+      </Card>
+      <Card>
+        <div className='title'>&lt;Switch&gt;</div>
+        <p>A switch input field serves to enable and disable a state</p>
+        <Switch
+          checked={switchState}
+          onCheck={() => {
+            setSwitchState(!switchState)
+          }}
+        />
       </Card>
     </Card>
   )
