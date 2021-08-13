@@ -4,12 +4,16 @@ import Checkbox from '../Checkbox'
 import RadioButton from '../RadioButton'
 import SearchField from '../SearchField'
 import Switch from '../Switch'
+import DateTimePicker from '../DateTimePicker'
+import Counter from '../Counter'
 
 function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
   const [switchState, setSwitchState] = useState(false)
   const [radioState, setRadioState] = useState('orange')
+  const [datetime, setDatetime] = useState('2021-05-15T08:00:00.000Z')
+  const [counter, setCounter] = useState(0)
 
   function handleCheckboxChanged(value) {
     setChecked(value)
@@ -73,6 +77,26 @@ function FormStyleGuide() {
             }}
           />
         ))}
+      </Card>
+      <Card>
+        <div className='title'>&lt;Date Time Picker&gt;</div>
+        <p>
+          A datetime picker serves to select a datetime within a given range.
+        </p>
+        <DateTimePicker
+          datetime={datetime}
+          setDatetime={setDatetime}
+          timezone='Europe/Brussels'
+          min='2021-05-01T08:00:00.000Z'
+          max='2021-05-31T08:00:00.000Z'
+        />
+      </Card>
+      <Card>
+        <div className='title'>&lt;Counter&gt;</div>
+        <p>
+          A counter serves to count up and down (it's needed to set a minValue).
+        </p>
+        <Counter minValue={0} setCounter={setCounter} counter={counter} />
       </Card>
     </Card>
   )
