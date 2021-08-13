@@ -3,14 +3,14 @@ import moment from 'moment-timezone'
 import styled from 'styled-components'
 
 const DateTimePickerStyle = styled.input.attrs({ type: 'datetime-local' })`
-  max-width: 200px;
+  max-width: 180px;
   color: ${(props) => props.theme.text};
   padding: 8px;
   text-align: right;
   font-size: 0.75rem;
   border-radius: 5px;
   border: ${(props) => `2px solid ${props.theme.darkBackground}`};
-  background: linear-gradient(to right, #fff 80%, #c4c4c4 20%);
+  background: linear-gradient(to right, #fff 160px, #c4c4c4 40px);
   background-size: 200px;
   background-repeat: no-repeat;
 
