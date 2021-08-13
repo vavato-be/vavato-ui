@@ -3,7 +3,7 @@ import moment from 'moment-timezone'
 import styled from 'styled-components'
 
 const DateTimePickerStyle = styled.input.attrs({ type: 'datetime-local' })`
-  max-width: 200px;
+  max-width: 180px;
   color: ${(props) => props.theme.text};
   padding: 8px;
   text-align: right;

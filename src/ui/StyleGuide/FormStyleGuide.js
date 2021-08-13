@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import Card from '../Card'
 import Checkbox from '../Checkbox'
+import RadioButton from '../RadioButton'
 import SearchField from '../SearchField'
+import Switch from '../Switch'
 import DateTimePicker from '../DateTimePicker'
 import Counter from '../Counter'
 
 function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
+  const [switchState, setSwitchState] = useState(false)
+  const [radioState, setRadioState] = useState('orange')
   const [datetime, setDatetime] = useState('2021-05-15T08:00:00.000Z')
   const [counter, setCounter] = useState(0)
 
@@ -48,6 +52,31 @@ function FormStyleGuide() {
           onChange={(value) => setSearch(value)}
         />
         <p>Value: {search}</p>
+      </Card>
+      <Card>
+        <div className='title'>&lt;Switch&gt;</div>
+        <p>A switch input field serves to enable and disable a state</p>
+        <Switch
+          checked={switchState}
+          onCheck={() => {
+            setSwitchState(!switchState)
+          }}
+        />
+      </Card>
+      <Card>
+        <div className='title'>&lt;Radio Button&gt;</div>
+        <p>A custom radio button providing many options to be selected</p>
+        {['orange', 'banana', 'apple'].map((option) => (
+          <RadioButton
+            key={`radio.${option}`}
+            name={`radio.${option}`}
+            value={option}
+            checked={radioState === option}
+            onCheck={() => {
+              setRadioState(option)
+            }}
+          />
+        ))}
       </Card>
       <Card>
         <div className='title'>&lt;Date Time Picker&gt;</div>
