@@ -8,6 +8,7 @@ import Button from './ui/Button'
 import ButtonWithIcon from './ui/ButtonWithIcon'
 import Card from './ui/Card'
 import Checkbox from './ui/Checkbox'
+import DateTimePicker from './ui/DateTimePicker'
 import Counter from './ui/Counter'
 import Dropdown from './ui/Dropdown'
 import DropdownButton from './ui/DropdownButton'
@@ -75,6 +76,7 @@ export {
   ButtonWithIcon,
   Card,
   Checkbox,
+  DateTimePicker,
   Counter,
   Dropdown,
   DropdownButton,
