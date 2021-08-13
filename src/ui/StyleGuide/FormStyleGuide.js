@@ -3,11 +3,13 @@ import Card from '../Card'
 import Checkbox from '../Checkbox'
 import SearchField from '../SearchField'
 import DateTimePicker from '../DateTimePicker'
+import Counter from '../Counter'
 
 function FormStyleGuide() {
   const [checked, setChecked] = useState(false)
   const [search, setSearch] = useState('')
   const [datetime, setDatetime] = useState('2021-05-15T08:00:00.000Z')
+  const [counter, setCounter] = useState(0)
 
   function handleCheckboxChanged(value) {
     setChecked(value)
@@ -59,6 +61,13 @@ function FormStyleGuide() {
           min='2021-05-01T08:00:00.000Z'
           max='2021-05-31T08:00:00.000Z'
         />
+      </Card>
+      <Card>
+        <div className='title'>&lt;Counter&gt;</div>
+        <p>
+          A counter serves to count up and down (it's needed to set a minValue).
+        </p>
+        <Counter minValue={0} setCounter={setCounter} counter={counter} />
       </Card>
     </Card>
   )

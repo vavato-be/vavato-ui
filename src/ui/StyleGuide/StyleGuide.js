@@ -27,11 +27,12 @@ const Container = styled.div`
 
 const NavBar = styled.nav`
   width: 200px;
-  height: 100%;
+  height: auto;
   background-color: ${(props) => props.theme.text};
   box-shadow: 5px 0px 10px 1px rgba(0, 0, 0, 0.15);
   padding: 32px 64px;
   z-index: 1;
+  overflow-y: scroll;
 `
 
 const NavLinkList = styled.ul`
