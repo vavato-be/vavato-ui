@@ -10,7 +10,7 @@ const DateTimePickerStyle = styled.input.attrs({ type: 'datetime-local' })`
   font-size: 0.75rem;
   border-radius: 5px;
   border: ${(props) => `2px solid ${props.theme.darkBackground}`};
-  background: linear-gradient(to right, #fff 160px, #c4c4c4 40px);
+  background: linear-gradient(to right, #fff 80%, #c4c4c4 20%);
   background-size: 200px;
   background-repeat: no-repeat;
 
