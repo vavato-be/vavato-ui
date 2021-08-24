@@ -9,6 +9,10 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin: 16px 32px 24px 32px;
+
+  &.inline {
+    margin: 0;
+  }
 `
 
 const InputsContainer = styled.div`
@@ -57,18 +61,12 @@ const Label = styled.label`
   margin-bottom: 10px;
 `
 
-function FormField({ name, label, children }) {
-  return React.createElement(
-    Container,
-    null,
-    React.createElement(
-      Label,
-      {
-        htmlFor: name
-      },
-      label
-    ),
-    React.createElement(InputsContainer, null, children)
+function FormField({ name, label, children, inline }) {
+  return (
+    <Container className={inline ? 'inline' : ''}>
+      <Label htmlFor={name}>{label}</Label>
+      <InputsContainer>{children}</InputsContainer>
+    </Container>
   )
 }
 

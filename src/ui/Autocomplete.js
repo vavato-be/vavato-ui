@@ -13,6 +13,11 @@ const Selected = styled('div')`
   font-size: 13px;
   border-radius: 3px;
   color: ${(props) => rgba(props.theme.text, 0.4)};
+
+  &.highlighted {
+    color: ${(props) => props.theme.lightText};
+    border-color: ${(props) => props.theme.lightText};
+  }
 `
 
 const StyledLink = styled('a')`
@@ -58,7 +63,14 @@ function DefaultResultRenderer(result) {
   return <span>{getText()}</span>
 }
 
-function Autocomplete({ onSelect, url, value, resultRenderer, placeholder }) {
+function Autocomplete({
+  onSelect,
+  url,
+  value,
+  resultRenderer,
+  placeholder,
+  highlighted
+}) {
   const [query, setQuery] = useState('')
   const [timer, setTimer] = useState(null)
   const [search, setSearch] = useState()
@@ -113,7 +125,10 @@ function Autocomplete({ onSelect, url, value, resultRenderer, placeholder }) {
   function renderSelected() {
     const renderer = resultRenderer || DefaultResultRenderer
     return (
-      <Selected onClick={() => startQuerying()}>
+      <Selected
+        className={highlighted ? 'highlighted' : ''}
+        onClick={() => startQuerying()}
+      >
         {value ? renderer(value) : placeholder || 'Click to search'}
       </Selected>
     )
