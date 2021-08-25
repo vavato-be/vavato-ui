@@ -8,6 +8,7 @@ import Button from './ui/Button'
 import ButtonWithIcon from './ui/ButtonWithIcon'
 import Card from './ui/Card'
 import Checkbox from './ui/Checkbox'
+import ConfirmationModal from './ui/ConfirmationModal'
 import DateTimePicker from './ui/DateTimePicker'
 import Counter from './ui/Counter'
 import Dropdown from './ui/Dropdown'
@@ -39,6 +40,8 @@ import ToasterManager from './ui/ToasterManager'
 import ToasterViewport from './ui/ToasterViewport'
 import Tooltip from './ui/Tooltip'
 import { fontSizes, fontWeights, colors } from './ui/constants'
+
+import { Modal, ModalHeader, ModalBody } from './ui/Modal'
 
 import {
   applyColors,
@@ -76,6 +79,7 @@ export {
   ButtonWithIcon,
   Card,
   Checkbox,
+  ConfirmationModal,
   Counter,
   DateTimePicker,
   Dropdown,
@@ -88,6 +92,9 @@ export {
   FileUploader,
   FormField,
   GlobalStyle,
+  ModalHeader,
+  ModalBody,
+  Modal,
   Input,
   Label,
   LinkWithIcon,
