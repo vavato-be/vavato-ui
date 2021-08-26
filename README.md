@@ -27,6 +27,13 @@ class Example extends Component {
 }
 ```
 
+## Development
+
+In order to test unreleased versions locally, you can do the following steps:
+
+1. `npm pack` to generate a \*.tgz file with the current version of this library.
+2. Go to whichever project you want to use this in and do: `npm install VAVATO_UI_DIRECTORY/*.tgz`.
+
 ## License
 
 MIT © [vavato-be](https://github.com/vavato-be)
