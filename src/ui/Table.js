@@ -35,7 +35,7 @@ const Table = styled.table`
   }
 
   & tbody tr.active {
-    background: ${(props) => rgba(props.theme.secondary, 0.1)};
+    background: ${(props) => rgba(props.theme.secondary, 0.1)} !important;
   }
 
   & tbody td,
