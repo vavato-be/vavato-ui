@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 16px 32px 24px 32px;
+  margin: 16px 32px 16px 32px;
 
   &.inline {
     margin: 0;
@@ -58,7 +58,7 @@ const Label = styled.label`
   font-size: 14px;
   text-transform: uppercase;
   color: ${(props) => props.theme.tableHeaders};
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 `
 
 function FormField({ name, label, children, inline }) {
