@@ -64,7 +64,7 @@ const Label = styled.label`
 function FormField({ name, label, children, inline }) {
   return (
     <Container className={inline ? 'inline' : ''}>
-      <Label htmlFor={name}>{label}</Label>
+      {label ? <Label htmlFor={name}>{label}</Label> : ''}
       <InputsContainer>{children}</InputsContainer>
     </Container>
   )
