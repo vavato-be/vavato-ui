@@ -3,7 +3,7 @@ import { useEnv } from './ui/EnvContext'
 import ToasterContext from './ui/ToasterContext'
 import { extractLinks, extractPagination } from './ui/utils'
 
-function requestHeaders() {
+function requestHeaders(extraReqHeaders = {}) {
   const token = window.localStorage.getItem('accessToken')
   const client = window.localStorage.getItem('client')
   const uid = window.localStorage.getItem('uid')
@@ -15,32 +15,33 @@ function requestHeaders() {
     Client: client,
     'Content-Type': 'application/json',
     'Token-Type': 'Bearer',
-    Uid: uid
+    Uid: uid,
+    ...extraReqHeaders
   }
 }
 
-async function fetchData(resource) {
-  return await fetchResource(resource)
+async function fetchData(resource, extraReqHeaders = {}) {
+  return await fetchResource(resource, 'GET', extraReqHeaders)
 }
 
-async function fetchJSON(resource) {
-  return await fetchResource(resource.json())
+async function fetchJSON(resource, extraReqHeaders = {}) {
+  return await fetchResource(resource.json(), 'GET', extraReqHeaders)
 }
 
-async function postData(resource, params) {
-  return await postResource(resource, params)
+async function postData(resource, params, extraReqHeaders = {}) {
+  return await postResource(resource, params, 'POST', extraReqHeaders)
 }
 
-async function putData(resource, params) {
-  return await postResource(resource, params, 'PUT')
+async function putData(resource, params, extraReqHeaders = {}) {
+  return await postResource(resource, params, 'PUT', extraReqHeaders)
 }
 
-async function deleteData(resource) {
-  return await fetchResource(resource, 'DELETE')
+async function deleteData(resource, extraReqHeaders = {}) {
+  return await fetchResource(resource, 'DELETE', extraReqHeaders)
 }
 
-async function fetchResource(resource, method = 'GET') {
-  const headers = requestHeaders()
+async function fetchResource(resource, method, extraReqHeaders = {}) {
+  const headers = requestHeaders(extraReqHeaders)
 
   const response = await fetch(resource, {
     method,
@@ -58,8 +59,8 @@ async function fetchResource(resource, method = 'GET') {
   return result
 }
 
-async function postResource(resource, params, method = 'POST') {
-  const headers = requestHeaders()
+async function postResource(resource, params, method, extraReqHeaders = {}) {
+  const headers = requestHeaders(extraReqHeaders)
 
   const response = await fetch(resource, {
     method,
