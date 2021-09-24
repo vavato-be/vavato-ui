@@ -13,13 +13,14 @@ const StyledButton = styled(Button)`
 `
 
 function ButtonWithIcon(props) {
-  const { icon } = props
+  const { icon, spin } = props
 
   return (
     <StyledButton {...safeProps(props)}>
       <div>
         <StyledIcon
           icon={icon}
+          spin={spin}
           haslabel={props.children && props.children.length}
         />
         {props.children && props.children.length ? (
