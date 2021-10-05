@@ -3,6 +3,7 @@ import { useEnv } from './ui/EnvContext'
 import ToasterContext from './ui/ToasterContext'
 import { extractLinks, extractPagination } from './ui/utils'
 
+// Some comment
 function requestHeaders(extraReqHeaders = {}) {
   const token = window.localStorage.getItem('accessToken')
   const client = window.localStorage.getItem('client')

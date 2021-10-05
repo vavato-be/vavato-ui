@@ -22,7 +22,7 @@ import 'vavato-ui/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <MyComponent />;
   }
 }
 ```
