@@ -10,16 +10,16 @@ const Container = styled.div`
 `
 
 const Group = styled.div`
-  padding: 0px 10px;
+  padding: 10px;
   background-color: ${(props) => props.theme.background};
   border-radius: 3px;
+  display: flex;
 `
 
 const StyledButton = styled(Button)`
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
-  margin-left: 0px;
-  margin-right: 0px;
+  margin: 0;
 
   &.active {
     background-color: ${(props) => props.theme.secondary};
