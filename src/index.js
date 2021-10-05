@@ -5,6 +5,7 @@ import Autocomplete from './ui/Autocomplete'
 import Badge from './ui/Badge'
 import Breadcrumbs from './ui/Breadcrumbs'
 import Button from './ui/Button'
+import ButtonGroup from './ui/ButtonGroup'
 import ButtonWithIcon from './ui/ButtonWithIcon'
 import Card from './ui/Card'
 import Checkbox from './ui/Checkbox'
@@ -76,6 +77,7 @@ export {
   Badge,
   Breadcrumbs,
   Button,
+  ButtonGroup,
   ButtonWithIcon,
   Card,
   Checkbox,
