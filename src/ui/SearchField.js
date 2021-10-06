@@ -8,14 +8,13 @@ import { safeProps } from './utils'
 
 const Container = styled.div`
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   position: relative;
-  height: 37px;
   font-size: 14px;
   color: ${(props) => rgba(props.theme.text, 0.4)};
 
   & > svg {
-    height: 37px;
     margin-right: calc(100% - 28px);
     position: absolute;
   }
