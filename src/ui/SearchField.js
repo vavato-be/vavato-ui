@@ -8,16 +8,20 @@ import { safeProps } from './utils'
 
 const Container = styled.div`
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   position: relative;
-  height: 37px;
   font-size: 14px;
   color: ${(props) => rgba(props.theme.text, 0.4)};
 
   & > svg {
-    height: 37px;
     margin-right: calc(100% - 28px);
     position: absolute;
+  }
+
+  &.shrinked > input {
+    width: 0;
+    padding-right: 3px;
   }
 `
 const Input = styled.input.attrs(() => {
@@ -44,6 +48,7 @@ const Input = styled.input.attrs(() => {
 function SearchField(props) {
   const input = useRef(null)
   const [focused, setFocused] = useState(false)
+  const [shrinked, setShrinked] = useState(props.shrink)
 
   function emitChange() {
     if (!props.onChange) {
@@ -53,14 +58,27 @@ function SearchField(props) {
     props.onChange(input.current.value)
   }
 
+  function onFocus() {
+    setFocused(true)
+    if (props.shrink) setShrinked(false)
+  }
+
+  function onBlur(e) {
+    setFocused(false)
+    if (props.shrink && !e.target.value) setShrinked(true)
+  }
+
   return (
-    <Container focused={focused} className={focused ? 'focused' : ''}>
+    <Container
+      focused={focused}
+      className={`${focused ? 'focused' : ''} ${shrinked ? 'shrinked' : ''}`}
+    >
       <FontAwesomeIcon icon={faSearch} onClick={() => input.current.focus()} />
       <Input
         ref={input}
         {...safeProps(props)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        onFocus={onFocus}
+        onBlur={onBlur}
         onChange={(e) => emitChange()}
       />
     </Container>
