@@ -21,7 +21,11 @@ const ConfirmationModal = ({
         <h1>{title}</h1>
       </ModalHeader>
       <ModalBody>
-        {description ? <Description>{description}</Description> : ''}
+        {description ? (
+          <Description dangerouslySetInnerHTML={{ __html: description }} />
+        ) : (
+          ''
+        )}
         <div>
           <Button onClick={() => setModalOpen(false)} className='outline'>
             Cancel
