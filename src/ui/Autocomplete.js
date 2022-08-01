@@ -69,7 +69,8 @@ function Autocomplete({
   value,
   resultRenderer,
   placeholder,
-  highlighted
+  highlighted,
+  extraReqHeaders
 }) {
   const [query, setQuery] = useState('')
   const [timer, setTimer] = useState(null)
@@ -183,7 +184,7 @@ function Autocomplete({
   const encodedQuery = encodeURIComponent(search)
   useFetch(`${url}?q=${encodedQuery}&query=${encodedQuery}`, applyResults, [
     search
-  ])
+  ], extraReqHeaders)
 
   // TODO: Keydown handler for esc to close query
   return (
