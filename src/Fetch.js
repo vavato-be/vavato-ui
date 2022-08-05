@@ -131,7 +131,12 @@ function useFetch(
   /* eslint-enable */
 }
 
-function usePagingFetch(url, callback = () => {}, dependencies = [url], extraReqHeaders = {}) {
+function usePagingFetch(
+  url,
+  callback = () => {},
+  dependencies = [url],
+  extraReqHeaders = {}
+) {
   const { error } = useContext(ToasterContext)
 
   /* eslint-disable */
@@ -173,7 +178,12 @@ async function usePost(
     }
     const doPost = async () => {
       const resource = `${domain}${relativeUrl}`
-      const result = await postResource(resource, params, 'POST', extraReqHeaders)
+      const result = await postResource(
+        resource,
+        params,
+        'POST',
+        extraReqHeaders
+      )
       const json = await result.json()
       assertResponse(result, json, error)
       callback(json)
@@ -200,7 +210,12 @@ async function usePut(
     }
     const doPut = async () => {
       const resource = `${domain}${relativeUrl}`
-      const result = await postResource(resource, params, 'PUT', extraReqHeaders)
+      const result = await postResource(
+        resource,
+        params,
+        'PUT',
+        extraReqHeaders
+      )
       const json = await result.json()
       assertResponse(result, json, error)
       callback(json)
