@@ -105,7 +105,8 @@ function assertResponse(result, json = null, error = () => {}) {
 function useFetch(
   relativeUrl,
   callback = () => {},
-  dependencies = [relativeUrl]
+  dependencies = [relativeUrl],
+  extraReqHeaders = {}
 ) {
   const domain = useEnv('DOMAIN')
   const { error } = useContext(ToasterContext)
@@ -119,7 +120,7 @@ function useFetch(
 
     const doFetch = async () => {
       const resource = `${domain}${relativeUrl}`
-      const result = await fetchData(resource)
+      const result = await fetchData(resource, extraReqHeaders)
       const json = await result.json()
       assertResponse(result, json, error)
       callback(json)
@@ -130,7 +131,12 @@ function useFetch(
   /* eslint-enable */
 }
 
-function usePagingFetch(url, callback = () => {}, dependencies = [url]) {
+function usePagingFetch(
+  url,
+  callback = () => {},
+  dependencies = [url],
+  extraReqHeaders = {}
+) {
   const { error } = useContext(ToasterContext)
 
   /* eslint-disable */
@@ -141,7 +147,7 @@ function usePagingFetch(url, callback = () => {}, dependencies = [url]) {
     }
 
     const doFetch = async () => {
-      const result = await fetchData(url)
+      const result = await fetchData(url, extraReqHeaders)
       const json = await result.json()
       const headers = await result.headers
       const links = extractLinks(headers.get('Link'))
@@ -158,7 +164,8 @@ async function usePost(
   relativeUrl,
   params,
   callback = () => {},
-  dependencies = []
+  dependencies = [],
+  extraReqHeaders = {}
 ) {
   const domain = useEnv('DOMAIN')
   const { error } = useContext(ToasterContext)
@@ -171,7 +178,12 @@ async function usePost(
     }
     const doPost = async () => {
       const resource = `${domain}${relativeUrl}`
-      const result = await postResource(resource, params)
+      const result = await postResource(
+        resource,
+        params,
+        'POST',
+        extraReqHeaders
+      )
       const json = await result.json()
       assertResponse(result, json, error)
       callback(json)
@@ -184,7 +196,8 @@ async function usePut(
   relativeUrl,
   params,
   callback = () => {},
-  dependencies = []
+  dependencies = [],
+  extraReqHeaders = {}
 ) {
   const domain = useEnv('DOMAIN')
   const { error } = useContext(ToasterContext)
@@ -197,7 +210,12 @@ async function usePut(
     }
     const doPut = async () => {
       const resource = `${domain}${relativeUrl}`
-      const result = await postResource(resource, params, 'PUT')
+      const result = await postResource(
+        resource,
+        params,
+        'PUT',
+        extraReqHeaders
+      )
       const json = await result.json()
       assertResponse(result, json, error)
       callback(json)
